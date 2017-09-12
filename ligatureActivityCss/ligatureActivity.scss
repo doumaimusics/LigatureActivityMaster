@@ -1,0 +1,707 @@
+body,div,p,h1,h2,h3,h4,h5,h6,span,label,input,i,ul,li,dl,dt,dd,ol,select,option,table,tr,td,tt,th,tbody,strong,textarea{
+    padding:0;margin: 0;list-style: none;
+    box-sizing:border-box;
+}
+body{
+   font-family: 'microsoft yahei',"微软雅黑",Verdana,Arial,Helvetica,sans-serif;
+   background: #00054B;
+}
+a{text-decoration:none;color: #333;}
+img{border: none;}
+i{font-style: none;}
+@mixin zuoyou{    //左右居中定位
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+@mixin shangxia{  //上下居中定位
+    position:absolute;
+    top:0;bottom:0;
+    margin:auto;
+}
+@mixin zhong{ //正中间定位
+    position:absolute;
+    left:0;top:0;
+    right:0;bottom:0;
+    margin:auto;
+}
+@mixin gai{
+    width:100%;
+    height:100%;
+    position:absolute;
+    left:0;top:0;
+    margin: auto;
+}
+@mixin fixed{
+    position: fixed;
+    top: 0;right: 0;
+    left: 0;bottom: 0;
+    margin: auto;
+    z-index: 11;
+}
+
+//清除浮动的类
+%clear{
+    content: '.';
+    display:block;
+    clear:both;
+    height:0;
+    line-height:0;
+    visibility:hidden;
+}
+.cleartfix:after{
+    @extend %clear;
+}
+
+@mixin userem($size){
+    $list:2048px,1920px,1600px,1400px,1242px,1140px,1280px,1024px,1080px,960px,800px,768px,736px,732px,720px,667px,640px,600px,568px,540px,533px,480px,435px,414px,412px,400px,385px,384px,375px,360px,320px,300px,240px;
+    @each $i in $list{
+        @media screen and (max-width:#{$i}){
+            html{
+                font-size: 100px * ($i/$size);
+            }
+        }
+    }   
+}
+@include userem(750px);
+
+// 解决手机1PX边框到手机上变粗的方法 
+ /* 先给需要加边框的类加上定位 */
+/* 1PX右边框  */
+.bdr-r:after {
+    height: 100%;
+    content: '';
+    width: 1px;
+    border-right: 1px solid #555780;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: scaleX(0.5);
+    -webkit-transform: scaleX(0.5);
+    z-index: 10;
+}
+
+/* 1PX左边框 */
+.bdr-l:after {
+    height: 100%;
+    content: '';
+    width: 1px;
+    border-left: 1px solid #555780;
+    position: absolute;
+    top: 0;
+    left: -1px;
+    transform: scaleX(0.5);
+    -webkit-transform: scaleX(0.5);
+    z-index: 10;
+}
+/* 1PX上边框 */
+.bdr-t:after {
+    height: 1px;
+    content: '';
+    width: 100%;
+    border-top: 1px solid #555780;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: scaleY(0.5);
+    -webkit-transform: scaleY(0.5);
+    z-index: 10;
+}
+
+/* 1PX下边框 */
+.bdr-b:after {
+    height: 1px;
+    content: '';
+    width: 100%;
+    border-bottom: 1px solid #555780;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: scaleY(0.5);
+    -webkit-transform: scaleY(0.5);
+    z-index: 10;
+}
+
+.main_box{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    .main_top{
+        width: 100%;
+        height:10.8rem;
+        background: url("../../../wx/images/ligatureActivity/top1.png?v=1.1") no-repeat;
+        background-size:cover;
+        overflow: hidden;
+    }
+    .ligature_box{
+        width: 100%;
+        height: 11.18rem;
+        background: url("../../../wx/images/ligatureActivity/top2.png?v=1.0") no-repeat;
+        background-size:cover ;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .show_box{
+        width: 100%;
+        min-height: 4.5rem;
+        position: relative;
+        top: -.4rem;
+    }
+    
+    .rule_box{
+        width: 100%;
+        height: 13.83rem;
+        background: url("../../../wx/images/ligatureActivity/top3.png?v=1.0") no-repeat;
+        background-size:cover ;
+          padding: 1.9rem 1.53rem 0rem 1.64rem;
+//      padding:2.05rem .8rem 0rem 1.2rem
+    }
+    
+    .footer_box{
+        width: 100%;
+        margin: .46rem 0;
+        font-size: .24rem;
+        color: #ccc;
+        text-align: center;
+        :nth-child(1){margin-bottom: .15rem;}
+    }
+} 
+
+.main_top .swiperTo{
+    width: 5.6rem;
+    height: .63rem;
+    margin:10.17rem  0 0 .7rem;
+    padding: 0 5.8rem 0 .15rem;
+    overflow: hidden;
+    .swiperOwe{
+        float: left;
+        width: 100rem;
+    .swiper_wrapper,.swiper_wrapper1{
+        float: left;
+    li{
+        font-size: .24rem;
+        color: #fff;
+        line-height: .63rem;
+        margin-right: .3rem;
+        float: left;
+    }
+    
+    }
+     }
+}
+
+.rule_box p{
+    font-size: .24rem;
+    color: #fff;
+    line-height: .4rem;
+    margin-bottom: .2rem;
+//  margin-bottom: .02rem; 
+     }
+
+.ligature_box .ligature_list{
+    width: 7.2rem;
+    height: 8.08rem;
+    margin: .45rem 0 0 .15rem;
+    padding: .2rem 0rem;
+    
+    li{
+        width: 2.34rem;
+        height: 2.54rem;
+//      background: #ccc;        
+        float: left;
+        overflow: hidden;
+    }
+    li.bgActive{
+        background: url("../../../wx/images/ligatureActivity/Rectangle 12.png") no-repeat;
+        background-size:cover ;
+    }    
+}
+.ligature_list{
+    li:not(:nth-child(1),:nth-child(4),:nth-child(7)) {
+        margin-left: .08rem;
+    }
+}
+.ligature_list li .list_content{
+    width: 2.1rem;
+    height: 2.3rem;
+    margin: 0.08rem auto 0 auto;
+    padding-top:.8rem ;
+}
+.ligature_list li:nth-child(1) .list_content{
+    background: url("../../../wx/images/ligatureActivity/img_1hao_normal.png") no-repeat;
+    background-size:2.1rem 2.3rem;
+}
+.ligature_list li:nth-child(2) .list_content{
+    background: url("../../../wx/images/ligatureActivity/img_2hao_normal.png") no-repeat;
+    background-size:2.1rem 2.3rem;
+}
+.ligature_list li:nth-child(3) .list_content{
+    background: url("../../../wx/images/ligatureActivity/img_3hao_normal.png") no-repeat;
+    background-size:2.1rem 2.3rem;
+}
+.ligature_list li:nth-child(4) .list_content{
+    background: url("../../../wx/images/ligatureActivity/img_4hao_normal.png") no-repeat;
+    background-size:2.1rem 2.3rem;
+}
+.ligature_list li:nth-child(5) .list_content{
+    background: url("../../../wx/images/ligatureActivity/img_5hao_normal.png") no-repeat;
+    background-size:2.1rem 2.3rem;
+}
+.ligature_list li:nth-child(6) .list_content{
+    background: url("../../../wx/images/ligatureActivity/img_6hao_normal.png") no-repeat;
+    background-size:2.1rem 2.3rem;
+}
+.ligature_list li:nth-child(7) .list_content{
+    background: url("../../../wx/images/ligatureActivity/img_7hao_normal.png") no-repeat;
+    background-size:2.1rem 2.3rem;
+}
+.ligature_list li:nth-child(8) .list_content{
+    background: url("../../../wx/images/ligatureActivity/img_8hao_normal.png") no-repeat;
+    background-size:2.1rem 2.3rem;
+}
+.ligature_list li:nth-child(9) .list_content{
+    background: url("../../../wx/images/ligatureActivity/img_9hao_normal.png") no-repeat;
+    background-size:2.1rem 2.3rem;
+}
+.list_content p{font-size: .18rem;color: #1F9CFC;text-align: center;}
+
+.list_content .draw_btn{
+    width: 1.8rem;
+    height: .7rem;    
+    margin: 0.5rem auto 0 auto;
+}
+
+
+.ligature_list li:nth-child(1) .list_content .draw_btn{
+   background: url("../../../wx/images/ligatureActivity/btn_10_normal.png") no-repeat; 
+    background-size:cover ;
+}
+.ligature_list li:nth-child(2) .list_content .draw_btn{
+    background: url("../../../wx/images/ligatureActivity/btn_30_normal.png") no-repeat; 
+    background-size:cover ;
+}
+.ligature_list li:nth-child(3) .list_content .draw_btn{
+    background: url("../../../wx/images/ligatureActivity/btn_75_normal.png") no-repeat; 
+                                                                                                            
+    background-size:cover ;
+}
+.ligature_list li:nth-child(4) .list_content .draw_btn{
+    background: url("../../../wx/images/ligatureActivity/btn_128_normal.png") no-repeat; 
+    background-size:cover ;
+}
+.ligature_list li:nth-child(5) .list_content .draw_btn{
+    background: url("../../../wx/images/ligatureActivity/btn_12_normal.png") no-repeat; 
+    background-size:cover ;
+}
+.ligature_list li:nth-child(6) .list_content .draw_btn{
+    background: url("../../../wx/images/ligatureActivity/btn_38_normal.png") no-repeat; 
+    background-size:cover ;
+}
+.ligature_list li:nth-child(7) .list_content .draw_btn{
+    background: url("../../../wx/images/ligatureActivity/btn_18_normal.png") no-repeat; 
+    background-size:cover ;
+}
+.ligature_list li:nth-child(8) .list_content .draw_btn{
+    background: url("../../../wx/images/ligatureActivity/btn_15_normal.png") no-repeat; 
+    background-size:cover ;
+}
+.ligature_list li:nth-child(9) .list_content .draw_btn{
+    background: url("../../../wx/images/ligatureActivity/btn_388_normal.png") no-repeat; 
+    background-size:cover ;
+}
+
+.ligature_list li .list_content .draw_btn.drar_btn_active{
+    font-size: .18rem;
+    line-height: .7rem;
+    text-align: center;
+    color: #fff;
+   width: 1.8rem;
+    height: .7rem;     
+  background: url("../../../wx/images/ligatureActivity/btn_lingqu_disabled.png") no-repeat; 
+    background-size:cover ;  
+}
+
+.ligature_list li .list_content .draw_btn.drar_btn_notActive{    
+  background: url("../../../wx/images/ligatureActivity/btn_weishiyong_normal.png?v=1.1") no-repeat; 
+    background-size:cover ;  
+}
+
+
+.show_box .show_content{
+    width: 7.1rem;
+    height: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+    background: -webkit-linear-gradient(top,#4E1782,#9641B8);
+    background:-moz-linear-gradient(top,#4E1782,#9641B8);
+    background:-ms-linear-gradient(top,#4E1782,#9641B8);
+    background:linear-gradient(top,#4E1782,#9641B8);       
+    .not_logIn{
+        width: 100%;
+        height: 4.5rem;
+        padding-top: 1.68rem;
+        text-align: center;
+//      display: none;
+        .click_logIn{
+            width: 2.92rem;
+            height: .65rem;
+            border-radius:1rem;
+            border: 1px solid #fff;
+            margin: 0 auto .27rem auto;
+            font-size: .28rem;
+            color: #fff;
+            line-height: .65rem;
+
+        }
+        p{font-size: .24rem;color: #fff;}
+    }
+    .already_logIn{
+        width: 100%;
+        height: 100%;
+        padding: .94rem 0 .3rem 0;
+        background: url("../../../wx/images/ligatureActivity/icon_biaoti_normal.png") no-repeat center .3rem;
+        background-size:4.26rem .29rem;
+        display: none;
+        .total_box{
+            text-align: center;
+            color: #fff;
+            font-size: .3rem;
+            margin-bottom: .1rem;
+            .total_money{font-size: .52rem;}
+        }
+        .total_xian{
+            text-align: center;
+            margin-bottom: .1rem;
+            font-size: .24rem;color: #fff;
+          span{font-size: .36rem;color: #FFBF1D;}
+        }
+        .total_award{
+            width: 6.33rem;
+            min-height: 1.9rem;
+            max-height: 3rem;
+            background: #000441;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+    }
+}
+
+.total_award{
+    
+    
+  .title_list{
+    height: .49rem;
+    position: relative;
+    li{
+        width: 25%;
+        float: left;
+        line-height: .5rem;
+        text-align: center;
+        color: #fff;
+        font-size: .22rem;
+    }
+}
+
+.hint_xian{
+    font-size:.2rem;
+    color: #fff;
+    text-align: center;
+    margin-top: .46rem;
+    display: none;
+    }
+    
+    .total_xian_list{
+        width: 100%;
+        height: 2.4rem;
+        display: none;
+        overflow: auto;
+        li{
+            width: 100%;
+            height:.49rem;
+            font-size: .2rem;
+            color: #fff;
+            line-height: .5rem;
+            position: relative;
+            span{
+                width: 24.5%;
+                height: 100%;
+                float: left;
+                line-height: .5rem;
+                text-align: center;
+                white-space: nowrap;
+                text-overflow:ellipsis;
+                overflow: hidden;
+            }
+        }
+    }
+}
+
+
+
+//原点
+.origin1,.origin2,.origin3,.origin4{
+    display: block;
+    width: .08rem;
+    height: .08rem;
+    position: absolute;             
+    border-radius:50% ;                
+}
+.origin1,.origin2{background: #6D2999;}
+.origin3,.origin4{background: #903EB4;}
+
+.origin1{
+       left: .08rem;top: .06rem;
+}
+.origin2{
+       right: .08rem;top: .06rem;
+}
+.origin3{
+       left: .08rem;bottom: .06rem;
+}
+.origin4{
+       right: .08rem;bottom: .06rem;
+}
+
+
+//攻略样式
+.strategy_btn{
+    width:.73rem;
+    height: 1.64rem;
+    background: url("../../../wx/images/ligatureActivity/btn_tangsuo_normal.png") no-repeat;
+    background-size:cover ;
+    position:fixed;
+    right: 0;
+    top: 5.65rem;
+    box-sizing: border-box;
+    font-size: .26rem;
+    color: #fff;
+    text-align: center;
+    padding:.15rem 0 0 .25rem;
+    z-index: 11;
+    word-wrap: break-word; 
+letter-spacing: .2rem; 
+}
+
+.strategy_page{
+    z-index: 11;
+    width: 5.8rem;
+    height: 6.55rem;
+    @include fixed;
+    display: none;
+    background: url("../../../wx/images/ligatureActivity/img_tansuo_normal.png?v=1.1") no-repeat;
+    background-size:cover ;
+    padding: 1.35rem 0 0 0.2rem;
+    font-size: .22rem;
+    .strategy_cont{
+        width: 100%;
+        height: 100%;
+     overflow: auto;
+    span{color: #5AA3FC;}
+    p{color: #333;margin-bottom: .24rem;}
+    }
+    
+    .close_strategy{
+        width: .6rem;
+        height:.63rem;
+        position: absolute;
+        right: .48rem;top: 0;
+    }
+}
+
+//遮罩
+.mask_tk{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;left: 0;
+    z-index: 10;
+    display: none;
+    background:rgba(0,0,0,.5);
+}
+
+
+//引导页
+.guide_page{
+    width: 5.8rem;
+    height: 7.64rem;
+    @include fixed;
+    display: none;
+    .swiper-container .swiper-wrapper{
+         width: 5.8rem;
+    height: 7.64rem;    
+        .swiper-slide:nth-child(1){
+            background: url("../../../wx/images/ligatureActivity/img_yingdao1_normal.png") no-repeat;
+            background-size:cover ;
+        }  
+        .swiper-slide:nth-child(2){
+            background: url("../../../wx/images/ligatureActivity/img_yingdao2_normal.png") no-repeat;
+            background-size:cover ;
+            .guide_btn{
+                width: 3.2rem;
+                height: .74rem;
+                position: absolute;
+                bottom: .34rem;
+                left: 0;right: 0;
+                margin: auto;
+                z-index:11;
+            }
+        }        
+    }
+
+}
+
+.pagination_box{
+    width: 100%;
+    height: .13rem;
+    position: absolute;
+    bottom: .4rem;
+    left: 0;
+    z-index: 10;
+    padding-left: 2.69rem;
+    li{
+        width: .13rem;height: .13rem;
+       border-radius:50%;
+       background: #DFDCE0;
+       float: left;       
+       margin-right: .2rem;
+    }
+    li:nth-child(1){
+    background: url("../../../wx/images/ligatureActivity/icon_yingdaoyuan_normal.png") no-repeat;
+    background-size:.13rem .13rem ;
+    }
+}
+
+//线的样式
+.ligature_box{
+    .xian1,.xian2,.xian3,.xian4,.xian5,.xian6{
+        width: .63rem;
+        height: .08rem;
+        position: absolute;
+        background: url("../../../wx/images/ligatureActivity/img_hengxian_normal.png") no-repeat;
+        background-size:cover;
+    }
+    
+    .xian1.xianActive,.xian2.xianActive,.xian3.xianActive,.xian4.xianActive,.xian5.xianActive,.xian6.xianActive{
+        width: .63rem;
+        height: .08rem;
+        position: absolute;
+        background: url("../../../wx/images/ligatureActivity/img_hengxian_pressed.png") no-repeat;
+        background-size:cover;
+    }
+    
+    
+    .xian7,.xian8,.xian9,.xian10,.xian11,.xian12{
+        width: .08rem;
+        height: .48rem;
+        position: absolute;
+        background: url("../../../wx/images/ligatureActivity/img_xian_normal.png") no-repeat;
+        background-size:cover;
+    }
+    .xian7.xianActive,.xian8.xianActive,.xian9.xianActive,.xian10.xianActive,.xian11.xianActive,.xian12.xianActive{
+        width: .08rem;
+        height: .48rem;
+        position: absolute;
+        background: url("../../../wx/images/ligatureActivity/img_xian_pressed.png") no-repeat;
+        background-size:cover;
+    }
+    
+    
+    
+    
+    
+    .xian13,.xian14{
+        width: .55rem;
+        height: .53rem;
+        position: absolute;
+        background: url("../../../wx/images/ligatureActivity/img_xiexian1_normal.png") no-repeat;
+        background-size:cover;
+    } 
+    .xian13.xianActive,.xian14.xianActive{
+        width: .55rem;
+        height: .53rem;
+        position: absolute;
+        background: url("../../../wx/images/ligatureActivity/img_xiexian1_pressed.png") no-repeat;
+        background-size:cover;
+    }     
+    .xian15,.xian16{
+        width: .55rem;
+        height: .53rem;
+        position: absolute;
+        background: url("../../../wx/images/ligatureActivity/img_xiexian2_normal.png") no-repeat;
+        background-size:cover;
+    } 
+    
+    .xian15.xianActive,.xian16.xianActive{
+        width: .55rem;
+        height: .53rem;
+        position: absolute;
+        background: url("../../../wx/images/ligatureActivity/img_xiexian2_pressed.png") no-repeat;
+        background-size:cover;
+    }  
+    
+    .xian1{left: 2.22rem;top: 1.88rem;}
+    .xian2{right: 2.22rem;top: 1.88rem;}
+    .xian3{left: 2.22rem;top: 4.41rem;}
+    .xian4{right: 2.22rem;top: 4.41rem;}
+    .xian5{left: 2.22rem;top: 6.98rem;}
+    .xian6{right: 2.22rem;top: 6.98rem;}
+    
+    
+    
+    .xian7{left: 1.32rem;top: 2.94rem;}
+    .xian8{left: 3.74rem;top: 2.94rem;}
+    .xian9{right: 1.3rem;top: 2.94rem;}
+    .xian10{left: 1.32rem;top: 5.5rem;}
+    .xian11{left: 3.74rem;top: 5.5rem;}
+    .xian12{right: 1.3rem;top: 5.5rem;}
+    
+    .xian13{left: 2.25rem;top: 2.9rem;}
+    .xian14{left: 4.68rem;top: 5.45rem;}
+    .xian15{left: 4.67rem;top: 2.9rem;}
+    .xian16{left: 2.25rem;top: 5.45rem;}  
+}
+
+//领取红包弹框样式
+.red_package_tk{
+    width: 5.28rem;
+    height: 8.17rem;
+    background: url("../../../wx/images/ligatureActivity/img_tangkuang_normal.png") no-repeat;
+    background-size: cover;
+    text-align: center;
+    @include fixed;
+    padding-top: 1.35rem;
+    padding-left: 0.85rem;
+    overflow: hidden;
+        display: none;
+    
+    h1{font-size: .36rem;color: #fff;margin-bottom: .2rem;}
+    p{font-size: .36rem;color: #FAE95C;}
+    .package_btn{
+        width: 3.2rem;
+        height:.74rem;
+        font-size: .32rem;
+        color: #fff;
+        line-height: .74rem;
+        margin: 0.39rem 0 0 0.53rem;
+        background: url("../../../wx/images/ligatureActivity/tankuang_btn.png") no-repeat;
+        background-size:cover ;
+    }
+    .package_close{
+        width: .7rem;
+        height: .7rem;
+        position: absolute;
+        bottom: 0;left: 2.65rem;
+    }
+}
+
+
+//活动结束后的遮罩
+.mask_end{
+    @include gai;
+    background:rgba(0,0,0,.4);
+    z-index: 12;
+    display: none;
+}

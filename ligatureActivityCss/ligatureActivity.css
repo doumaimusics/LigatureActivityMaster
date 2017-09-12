@@ -1,0 +1,798 @@
+@charset "UTF-8";
+body, div, p, h1, h2, h3, h4, h5, h6, span, label, input, i, ul, li, dl, dt, dd, ol, select, option, table, tr, td, tt, th, tbody, strong, textarea {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  box-sizing: border-box; }
+
+body {
+  font-family: 'microsoft yahei',"微软雅黑",Verdana,Arial,Helvetica,sans-serif;
+  background: #00054B; }
+
+a {
+  text-decoration: none;
+  color: #333; }
+
+img {
+  border: none; }
+
+i {
+  font-style: none; }
+
+.cleartfix:after {
+  content: '.';
+  display: block;
+  clear: both;
+  height: 0;
+  line-height: 0;
+  visibility: hidden; }
+
+@media screen and (max-width: 2048px) {
+  html {
+    font-size: 273.06667px; } }
+
+@media screen and (max-width: 1920px) {
+  html {
+    font-size: 256px; } }
+
+@media screen and (max-width: 1600px) {
+  html {
+    font-size: 213.33333px; } }
+
+@media screen and (max-width: 1400px) {
+  html {
+    font-size: 186.66667px; } }
+
+@media screen and (max-width: 1242px) {
+  html {
+    font-size: 165.6px; } }
+
+@media screen and (max-width: 1140px) {
+  html {
+    font-size: 152px; } }
+
+@media screen and (max-width: 1280px) {
+  html {
+    font-size: 170.66667px; } }
+
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: 136.53333px; } }
+
+@media screen and (max-width: 1080px) {
+  html {
+    font-size: 144px; } }
+
+@media screen and (max-width: 960px) {
+  html {
+    font-size: 128px; } }
+
+@media screen and (max-width: 800px) {
+  html {
+    font-size: 106.66667px; } }
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 102.4px; } }
+
+@media screen and (max-width: 736px) {
+  html {
+    font-size: 98.13333px; } }
+
+@media screen and (max-width: 732px) {
+  html {
+    font-size: 97.6px; } }
+
+@media screen and (max-width: 720px) {
+  html {
+    font-size: 96px; } }
+
+@media screen and (max-width: 667px) {
+  html {
+    font-size: 88.93333px; } }
+
+@media screen and (max-width: 640px) {
+  html {
+    font-size: 85.33333px; } }
+
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 80px; } }
+
+@media screen and (max-width: 568px) {
+  html {
+    font-size: 75.73333px; } }
+
+@media screen and (max-width: 540px) {
+  html {
+    font-size: 72px; } }
+
+@media screen and (max-width: 533px) {
+  html {
+    font-size: 71.06667px; } }
+
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 64px; } }
+
+@media screen and (max-width: 435px) {
+  html {
+    font-size: 58px; } }
+
+@media screen and (max-width: 414px) {
+  html {
+    font-size: 55.2px; } }
+
+@media screen and (max-width: 412px) {
+  html {
+    font-size: 54.93333px; } }
+
+@media screen and (max-width: 400px) {
+  html {
+    font-size: 53.33333px; } }
+
+@media screen and (max-width: 385px) {
+  html {
+    font-size: 51.33333px; } }
+
+@media screen and (max-width: 384px) {
+  html {
+    font-size: 51.2px; } }
+
+@media screen and (max-width: 375px) {
+  html {
+    font-size: 50px; } }
+
+@media screen and (max-width: 360px) {
+  html {
+    font-size: 48px; } }
+
+@media screen and (max-width: 320px) {
+  html {
+    font-size: 42.66667px; } }
+
+@media screen and (max-width: 300px) {
+  html {
+    font-size: 40px; } }
+
+@media screen and (max-width: 240px) {
+  html {
+    font-size: 32px; } }
+
+/* 先给需要加边框的类加上定位 */
+/* 1PX右边框  */
+.bdr-r:after {
+  height: 100%;
+  content: '';
+  width: 1px;
+  border-right: 1px solid #555780;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: scaleX(0.5);
+  -webkit-transform: scaleX(0.5);
+  z-index: 10; }
+
+/* 1PX左边框 */
+.bdr-l:after {
+  height: 100%;
+  content: '';
+  width: 1px;
+  border-left: 1px solid #555780;
+  position: absolute;
+  top: 0;
+  left: -1px;
+  transform: scaleX(0.5);
+  -webkit-transform: scaleX(0.5);
+  z-index: 10; }
+
+/* 1PX上边框 */
+.bdr-t:after {
+  height: 1px;
+  content: '';
+  width: 100%;
+  border-top: 1px solid #555780;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: scaleY(0.5);
+  -webkit-transform: scaleY(0.5);
+  z-index: 10; }
+
+/* 1PX下边框 */
+.bdr-b:after {
+  height: 1px;
+  content: '';
+  width: 100%;
+  border-bottom: 1px solid #555780;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: scaleY(0.5);
+  -webkit-transform: scaleY(0.5);
+  z-index: 10; }
+
+.main_box {
+  width: 100%;
+  height: 100%;
+  position: relative; }
+  .main_box .main_top {
+    width: 100%;
+    height: 10.8rem;
+    background: url("../../../wx/images/ligatureActivity/top1.png?v=1.1") no-repeat;
+    background-size: cover;
+    overflow: hidden; }
+  .main_box .ligature_box {
+    width: 100%;
+    height: 11.18rem;
+    background: url("../../../wx/images/ligatureActivity/top2.png?v=1.0") no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    position: relative; }
+  .main_box .show_box {
+    width: 100%;
+    min-height: 4.5rem;
+    position: relative;
+    top: -.4rem; }
+  .main_box .rule_box {
+    width: 100%;
+    height: 13.83rem;
+    background: url("../../../wx/images/ligatureActivity/top3.png?v=1.0") no-repeat;
+    background-size: cover;
+    padding: 1.9rem 1.53rem 0rem 1.64rem; }
+  .main_box .footer_box {
+    width: 100%;
+    margin: .46rem 0;
+    font-size: .24rem;
+    color: #ccc;
+    text-align: center; }
+    .main_box .footer_box :nth-child(1) {
+      margin-bottom: .15rem; }
+
+.main_top .swiperTo {
+  width: 5.6rem;
+  height: .63rem;
+  margin: 10.17rem  0 0 .7rem;
+  padding: 0 5.8rem 0 .15rem;
+  overflow: hidden; }
+  .main_top .swiperTo .swiperOwe {
+    float: left;
+    width: 100rem; }
+    .main_top .swiperTo .swiperOwe .swiper_wrapper, .main_top .swiperTo .swiperOwe .swiper_wrapper1 {
+      float: left; }
+      .main_top .swiperTo .swiperOwe .swiper_wrapper li, .main_top .swiperTo .swiperOwe .swiper_wrapper1 li {
+        font-size: .24rem;
+        color: #fff;
+        line-height: .63rem;
+        margin-right: .3rem;
+        float: left; }
+
+.rule_box p {
+  font-size: .24rem;
+  color: #fff;
+  line-height: .4rem;
+  margin-bottom: .2rem; }
+
+.ligature_box .ligature_list {
+  width: 7.2rem;
+  height: 8.08rem;
+  margin: .45rem 0 0 .15rem;
+  padding: .2rem 0rem; }
+  .ligature_box .ligature_list li {
+    width: 2.34rem;
+    height: 2.54rem;
+    float: left;
+    overflow: hidden; }
+  .ligature_box .ligature_list li.bgActive {
+    background: url("../../../wx/images/ligatureActivity/Rectangle 12.png") no-repeat;
+    background-size: cover; }
+
+.ligature_list li:not(:nth-child(1)):not(:nth-child(4)):not(:nth-child(7)) {
+  margin-left: .08rem; }
+
+.ligature_list li .list_content {
+  width: 2.1rem;
+  height: 2.3rem;
+  margin: 0.08rem auto 0 auto;
+  padding-top: .8rem; }
+
+.ligature_list li:nth-child(1) .list_content {
+  background: url("../../../wx/images/ligatureActivity/img_1hao_normal.png") no-repeat;
+  background-size: 2.1rem 2.3rem; }
+
+.ligature_list li:nth-child(2) .list_content {
+  background: url("../../../wx/images/ligatureActivity/img_2hao_normal.png") no-repeat;
+  background-size: 2.1rem 2.3rem; }
+
+.ligature_list li:nth-child(3) .list_content {
+  background: url("../../../wx/images/ligatureActivity/img_3hao_normal.png") no-repeat;
+  background-size: 2.1rem 2.3rem; }
+
+.ligature_list li:nth-child(4) .list_content {
+  background: url("../../../wx/images/ligatureActivity/img_4hao_normal.png") no-repeat;
+  background-size: 2.1rem 2.3rem; }
+
+.ligature_list li:nth-child(5) .list_content {
+  background: url("../../../wx/images/ligatureActivity/img_5hao_normal.png") no-repeat;
+  background-size: 2.1rem 2.3rem; }
+
+.ligature_list li:nth-child(6) .list_content {
+  background: url("../../../wx/images/ligatureActivity/img_6hao_normal.png") no-repeat;
+  background-size: 2.1rem 2.3rem; }
+
+.ligature_list li:nth-child(7) .list_content {
+  background: url("../../../wx/images/ligatureActivity/img_7hao_normal.png") no-repeat;
+  background-size: 2.1rem 2.3rem; }
+
+.ligature_list li:nth-child(8) .list_content {
+  background: url("../../../wx/images/ligatureActivity/img_8hao_normal.png") no-repeat;
+  background-size: 2.1rem 2.3rem; }
+
+.ligature_list li:nth-child(9) .list_content {
+  background: url("../../../wx/images/ligatureActivity/img_9hao_normal.png") no-repeat;
+  background-size: 2.1rem 2.3rem; }
+
+.list_content p {
+  font-size: .18rem;
+  color: #1F9CFC;
+  text-align: center; }
+
+.list_content .draw_btn {
+  width: 1.8rem;
+  height: .7rem;
+  margin: 0.5rem auto 0 auto; }
+
+.ligature_list li:nth-child(1) .list_content .draw_btn {
+  background: url("../../../wx/images/ligatureActivity/btn_10_normal.png") no-repeat;
+  background-size: cover; }
+
+.ligature_list li:nth-child(2) .list_content .draw_btn {
+  background: url("../../../wx/images/ligatureActivity/btn_30_normal.png") no-repeat;
+  background-size: cover; }
+
+.ligature_list li:nth-child(3) .list_content .draw_btn {
+  background: url("../../../wx/images/ligatureActivity/btn_75_normal.png") no-repeat;
+  background-size: cover; }
+
+.ligature_list li:nth-child(4) .list_content .draw_btn {
+  background: url("../../../wx/images/ligatureActivity/btn_128_normal.png") no-repeat;
+  background-size: cover; }
+
+.ligature_list li:nth-child(5) .list_content .draw_btn {
+  background: url("../../../wx/images/ligatureActivity/btn_12_normal.png") no-repeat;
+  background-size: cover; }
+
+.ligature_list li:nth-child(6) .list_content .draw_btn {
+  background: url("../../../wx/images/ligatureActivity/btn_38_normal.png") no-repeat;
+  background-size: cover; }
+
+.ligature_list li:nth-child(7) .list_content .draw_btn {
+  background: url("../../../wx/images/ligatureActivity/btn_18_normal.png") no-repeat;
+  background-size: cover; }
+
+.ligature_list li:nth-child(8) .list_content .draw_btn {
+  background: url("../../../wx/images/ligatureActivity/btn_15_normal.png") no-repeat;
+  background-size: cover; }
+
+.ligature_list li:nth-child(9) .list_content .draw_btn {
+  background: url("../../../wx/images/ligatureActivity/btn_388_normal.png") no-repeat;
+  background-size: cover; }
+
+.ligature_list li .list_content .draw_btn.drar_btn_active {
+  font-size: .18rem;
+  line-height: .7rem;
+  text-align: center;
+  color: #fff;
+  width: 1.8rem;
+  height: .7rem;
+  background: url("../../../wx/images/ligatureActivity/btn_lingqu_disabled.png") no-repeat;
+  background-size: cover; }
+
+.ligature_list li .list_content .draw_btn.drar_btn_notActive {
+  background: url("../../../wx/images/ligatureActivity/btn_weishiyong_normal.png?v=1.1") no-repeat;
+  background-size: cover; }
+
+.show_box .show_content {
+  width: 7.1rem;
+  height: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+  background: -webkit-linear-gradient(top, #4E1782, #9641B8);
+  background: -moz-linear-gradient(top, #4E1782, #9641B8);
+  background: -ms-linear-gradient(top, #4E1782, #9641B8);
+  background: linear-gradient(top, #4E1782, #9641B8); }
+  .show_box .show_content .not_logIn {
+    width: 100%;
+    height: 4.5rem;
+    padding-top: 1.68rem;
+    text-align: center; }
+    .show_box .show_content .not_logIn .click_logIn {
+      width: 2.92rem;
+      height: .65rem;
+      border-radius: 1rem;
+      border: 1px solid #fff;
+      margin: 0 auto .27rem auto;
+      font-size: .28rem;
+      color: #fff;
+      line-height: .65rem; }
+    .show_box .show_content .not_logIn p {
+      font-size: .24rem;
+      color: #fff; }
+  .show_box .show_content .already_logIn {
+    width: 100%;
+    height: 100%;
+    padding: .94rem 0 .3rem 0;
+    background: url("../../../wx/images/ligatureActivity/icon_biaoti_normal.png") no-repeat center 0.3rem;
+    background-size: 4.26rem .29rem;
+    display: none; }
+    .show_box .show_content .already_logIn .total_box {
+      text-align: center;
+      color: #fff;
+      font-size: .3rem;
+      margin-bottom: .1rem; }
+      .show_box .show_content .already_logIn .total_box .total_money {
+        font-size: .52rem; }
+    .show_box .show_content .already_logIn .total_xian {
+      text-align: center;
+      margin-bottom: .1rem;
+      font-size: .24rem;
+      color: #fff; }
+      .show_box .show_content .already_logIn .total_xian span {
+        font-size: .36rem;
+        color: #FFBF1D; }
+    .show_box .show_content .already_logIn .total_award {
+      width: 6.33rem;
+      min-height: 1.9rem;
+      max-height: 3rem;
+      background: #000441;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden; }
+
+.total_award .title_list {
+  height: .49rem;
+  position: relative; }
+  .total_award .title_list li {
+    width: 25%;
+    float: left;
+    line-height: .5rem;
+    text-align: center;
+    color: #fff;
+    font-size: .22rem; }
+
+.total_award .hint_xian {
+  font-size: .2rem;
+  color: #fff;
+  text-align: center;
+  margin-top: .46rem;
+  display: none; }
+
+.total_award .total_xian_list {
+  width: 100%;
+  height: 2.4rem;
+  display: none;
+  overflow: auto; }
+  .total_award .total_xian_list li {
+    width: 100%;
+    height: .49rem;
+    font-size: .2rem;
+    color: #fff;
+    line-height: .5rem;
+    position: relative; }
+    .total_award .total_xian_list li span {
+      width: 24.5%;
+      height: 100%;
+      float: left;
+      line-height: .5rem;
+      text-align: center;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden; }
+
+.origin1, .origin2, .origin3, .origin4 {
+  display: block;
+  width: .08rem;
+  height: .08rem;
+  position: absolute;
+  border-radius: 50%; }
+
+.origin1, .origin2 {
+  background: #6D2999; }
+
+.origin3, .origin4 {
+  background: #903EB4; }
+
+.origin1 {
+  left: .08rem;
+  top: .06rem; }
+
+.origin2 {
+  right: .08rem;
+  top: .06rem; }
+
+.origin3 {
+  left: .08rem;
+  bottom: .06rem; }
+
+.origin4 {
+  right: .08rem;
+  bottom: .06rem; }
+
+.strategy_btn {
+  width: .73rem;
+  height: 1.64rem;
+  background: url("../../../wx/images/ligatureActivity/btn_tangsuo_normal.png") no-repeat;
+  background-size: cover;
+  position: fixed;
+  right: 0;
+  top: 5.65rem;
+  box-sizing: border-box;
+  font-size: .26rem;
+  color: #fff;
+  text-align: center;
+  padding: .15rem 0 0 .25rem;
+  z-index: 11;
+  word-wrap: break-word;
+  letter-spacing: .2rem; }
+
+.strategy_page {
+  z-index: 11;
+  width: 5.8rem;
+  height: 6.55rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 11;
+  display: none;
+  background: url("../../../wx/images/ligatureActivity/img_tansuo_normal.png?v=1.1") no-repeat;
+  background-size: cover;
+  padding: 1.35rem 0 0 0.2rem;
+  font-size: .22rem; }
+  .strategy_page .strategy_cont {
+    width: 100%;
+    height: 100%;
+    overflow: auto; }
+    .strategy_page .strategy_cont span {
+      color: #5AA3FC; }
+    .strategy_page .strategy_cont p {
+      color: #333;
+      margin-bottom: .24rem; }
+  .strategy_page .close_strategy {
+    width: .6rem;
+    height: .63rem;
+    position: absolute;
+    right: .48rem;
+    top: 0; }
+
+.mask_tk {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: none;
+  background: rgba(0, 0, 0, 0.5); }
+
+.guide_page {
+  width: 5.8rem;
+  height: 7.64rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 11;
+  display: none; }
+  .guide_page .swiper-container .swiper-wrapper {
+    width: 5.8rem;
+    height: 7.64rem; }
+    .guide_page .swiper-container .swiper-wrapper .swiper-slide:nth-child(1) {
+      background: url("../../../wx/images/ligatureActivity/img_yingdao1_normal.png") no-repeat;
+      background-size: cover; }
+    .guide_page .swiper-container .swiper-wrapper .swiper-slide:nth-child(2) {
+      background: url("../../../wx/images/ligatureActivity/img_yingdao2_normal.png") no-repeat;
+      background-size: cover; }
+      .guide_page .swiper-container .swiper-wrapper .swiper-slide:nth-child(2) .guide_btn {
+        width: 3.2rem;
+        height: .74rem;
+        position: absolute;
+        bottom: .34rem;
+        left: 0;
+        right: 0;
+        margin: auto;
+        z-index: 11; }
+
+.pagination_box {
+  width: 100%;
+  height: .13rem;
+  position: absolute;
+  bottom: .4rem;
+  left: 0;
+  z-index: 10;
+  padding-left: 2.69rem; }
+  .pagination_box li {
+    width: .13rem;
+    height: .13rem;
+    border-radius: 50%;
+    background: #DFDCE0;
+    float: left;
+    margin-right: .2rem; }
+  .pagination_box li:nth-child(1) {
+    background: url("../../../wx/images/ligatureActivity/icon_yingdaoyuan_normal.png") no-repeat;
+    background-size: .13rem .13rem; }
+
+.ligature_box .xian1, .ligature_box .xian2, .ligature_box .xian3, .ligature_box .xian4, .ligature_box .xian5, .ligature_box .xian6 {
+  width: .63rem;
+  height: .08rem;
+  position: absolute;
+  background: url("../../../wx/images/ligatureActivity/img_hengxian_normal.png") no-repeat;
+  background-size: cover; }
+
+.ligature_box .xian1.xianActive, .ligature_box .xian2.xianActive, .ligature_box .xian3.xianActive, .ligature_box .xian4.xianActive, .ligature_box .xian5.xianActive, .ligature_box .xian6.xianActive {
+  width: .63rem;
+  height: .08rem;
+  position: absolute;
+  background: url("../../../wx/images/ligatureActivity/img_hengxian_pressed.png") no-repeat;
+  background-size: cover; }
+
+.ligature_box .xian7, .ligature_box .xian8, .ligature_box .xian9, .ligature_box .xian10, .ligature_box .xian11, .ligature_box .xian12 {
+  width: .08rem;
+  height: .48rem;
+  position: absolute;
+  background: url("../../../wx/images/ligatureActivity/img_xian_normal.png") no-repeat;
+  background-size: cover; }
+
+.ligature_box .xian7.xianActive, .ligature_box .xian8.xianActive, .ligature_box .xian9.xianActive, .ligature_box .xian10.xianActive, .ligature_box .xian11.xianActive, .ligature_box .xian12.xianActive {
+  width: .08rem;
+  height: .48rem;
+  position: absolute;
+  background: url("../../../wx/images/ligatureActivity/img_xian_pressed.png") no-repeat;
+  background-size: cover; }
+
+.ligature_box .xian13, .ligature_box .xian14 {
+  width: .55rem;
+  height: .53rem;
+  position: absolute;
+  background: url("../../../wx/images/ligatureActivity/img_xiexian1_normal.png") no-repeat;
+  background-size: cover; }
+
+.ligature_box .xian13.xianActive, .ligature_box .xian14.xianActive {
+  width: .55rem;
+  height: .53rem;
+  position: absolute;
+  background: url("../../../wx/images/ligatureActivity/img_xiexian1_pressed.png") no-repeat;
+  background-size: cover; }
+
+.ligature_box .xian15, .ligature_box .xian16 {
+  width: .55rem;
+  height: .53rem;
+  position: absolute;
+  background: url("../../../wx/images/ligatureActivity/img_xiexian2_normal.png") no-repeat;
+  background-size: cover; }
+
+.ligature_box .xian15.xianActive, .ligature_box .xian16.xianActive {
+  width: .55rem;
+  height: .53rem;
+  position: absolute;
+  background: url("../../../wx/images/ligatureActivity/img_xiexian2_pressed.png") no-repeat;
+  background-size: cover; }
+
+.ligature_box .xian1 {
+  left: 2.22rem;
+  top: 1.88rem; }
+
+.ligature_box .xian2 {
+  right: 2.22rem;
+  top: 1.88rem; }
+
+.ligature_box .xian3 {
+  left: 2.22rem;
+  top: 4.41rem; }
+
+.ligature_box .xian4 {
+  right: 2.22rem;
+  top: 4.41rem; }
+
+.ligature_box .xian5 {
+  left: 2.22rem;
+  top: 6.98rem; }
+
+.ligature_box .xian6 {
+  right: 2.22rem;
+  top: 6.98rem; }
+
+.ligature_box .xian7 {
+  left: 1.32rem;
+  top: 2.94rem; }
+
+.ligature_box .xian8 {
+  left: 3.74rem;
+  top: 2.94rem; }
+
+.ligature_box .xian9 {
+  right: 1.3rem;
+  top: 2.94rem; }
+
+.ligature_box .xian10 {
+  left: 1.32rem;
+  top: 5.5rem; }
+
+.ligature_box .xian11 {
+  left: 3.74rem;
+  top: 5.5rem; }
+
+.ligature_box .xian12 {
+  right: 1.3rem;
+  top: 5.5rem; }
+
+.ligature_box .xian13 {
+  left: 2.25rem;
+  top: 2.9rem; }
+
+.ligature_box .xian14 {
+  left: 4.68rem;
+  top: 5.45rem; }
+
+.ligature_box .xian15 {
+  left: 4.67rem;
+  top: 2.9rem; }
+
+.ligature_box .xian16 {
+  left: 2.25rem;
+  top: 5.45rem; }
+
+.red_package_tk {
+  width: 5.28rem;
+  height: 8.17rem;
+  background: url("../../../wx/images/ligatureActivity/img_tangkuang_normal.png") no-repeat;
+  background-size: cover;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 11;
+  padding-top: 1.35rem;
+  padding-left: 0.85rem;
+  overflow: hidden;
+  display: none; }
+  .red_package_tk h1 {
+    font-size: .36rem;
+    color: #fff;
+    margin-bottom: .2rem; }
+  .red_package_tk p {
+    font-size: .36rem;
+    color: #FAE95C; }
+  .red_package_tk .package_btn {
+    width: 3.2rem;
+    height: .74rem;
+    font-size: .32rem;
+    color: #fff;
+    line-height: .74rem;
+    margin: 0.39rem 0 0 0.53rem;
+    background: url("../../../wx/images/ligatureActivity/tankuang_btn.png") no-repeat;
+    background-size: cover; }
+  .red_package_tk .package_close {
+    width: .7rem;
+    height: .7rem;
+    position: absolute;
+    bottom: 0;
+    left: 2.65rem; }
+
+.mask_end {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: auto;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 12;
+  display: none; }

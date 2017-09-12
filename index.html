@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="format-detection" content="telephone=no" />
+		<title>趣味领红包，连线送现金</title>
+		<script type="text/javascript" src="../../../../js/jquery-1.9.1.min.js"></script>
+		<script src="../../../../js/swiper.min.js"></script>
+		<script type="text/javascript" src="${theme_dir}/wx/plugin/layer-mobile/layer.m.js"></script>
+		<link rel="stylesheet" href="../../../../css/swiper.min.css" />
+		<link rel="stylesheet" type="text/css" href="${theme_dir}/wx/css/ligatureActivity/ligatureActivity.css" />
+
+	</head>
+
+	<body>
+		<div class="main_box">
+
+			<!--中奖轮播展示部分-->
+			<section class="main_top">
+				<div class="swiperTo" id="swiperTo">
+					<div class="swiperOwe">
+						<ul class="swiper_wrapper" id="swiper_wrapper">
+							<li>187****2909成功连成1条直线，获得88元现金！</li>
+							<li>158****2001成功连成3条直线，获得264元现金！</li>
+							<li>156****4532成功连成2条直线，获得176元现金！</li>
+							<li>181****3231成功连成1条直线，获得88元现金！</li>
+							<li>182****5427成功连成3条直线，获得264元现金！</li>
+							<li>186****7346成功连成3条直线，获得264元现金！</li>
+							<li>183****4361成功连成1条直线，获得88元现金！</li>
+							<li>153****2143成功连成3条直线，获得264元现金！</li>
+							<li>152****2234成功连成2条直线，获得176元现金！</li>
+						</ul>
+						<ul class="swiper_wrapper1" id="swiper_wrapper1"></ul>
+					</div>
+				</div>
+			</section>
+			<!--连线部分-->
+			<section class="ligature_box">
+				<ul class="ligature_list">
+					<li id="0-0">
+						<div class="list_content">
+							<p>今日剩余:<span></span></p>
+							<div class="draw_btn"></div>
+						</div>
+					</li>
+					<li id="0-1">
+						<div class="list_content">
+							<p>今日剩余:<span></span></p>
+							<div class="draw_btn"></div>
+						</div>
+					</li>
+					<li id="0-2">
+						<div class="list_content">
+							<p>今日剩余:<span></span></p>
+							<div class="draw_btn"></div>
+						</div>
+					</li>
+					<li id="1-0">
+						<div class="list_content">
+							<p>今日剩余:<span></span></p>
+							<div class="draw_btn"></div>
+						</div>
+					</li>
+					<li id="1-1">
+						<div class="list_content">
+							<p>今日剩余:<span></span></p>
+							<div class="draw_btn"></div>
+						</div>
+					</li>
+					<li id="1-2">
+						<div class="list_content">
+							<p>今日剩余:<span></span></p>
+							<div class="draw_btn"></div>
+						</div>
+					</li>
+					<li id="2-0">
+						<div class="list_content">
+							<p>今日剩余:<span></span></p>
+							<div class="draw_btn"></div>
+						</div>
+					</li>
+					<li id="2-1">
+						<div class="list_content">
+							<p>今日剩余:<span></span></p>
+							<div class="draw_btn"></div>
+						</div>
+					</li>
+					<li id="2-2">
+						<div class="list_content">
+							<p>今日剩余:<span></span></p>
+							<div class="draw_btn"></div>
+						</div>
+					</li>
+				</ul>
+
+				<!--线条-->
+				<div class="xian1"></div>
+				<div class="xian2"></div>
+				<div class="xian3"></div>
+				<div class="xian4"></div>
+				<div class="xian5"></div>
+				<div class="xian6"></div>
+				<div class="xian7"></div>
+				<div class="xian8"></div>
+				<div class="xian9"></div>
+				<div class="xian10"></div>
+				<div class="xian11"></div>
+				<div class="xian12"></div>
+				<div class="xian13"></div>
+				<div class="xian14"></div>
+				<div class="xian15"></div>
+				<div class="xian16"></div>
+
+			</section>
+			<!--奖励详情-->
+			<section class="show_box">
+				<div class="show_content">
+					<!--未登录的状态-->
+					<div class="not_logIn">
+						<div class="click_logIn">立即登录</div>
+						<p>您还未登陆，请登录后参与活动！</p>
+					</div>
+					<!--已登录的状态-->
+					<div class="already_logIn">
+						<div class="total_box">
+							<span class="total_money">0.00</span>
+							<span>(元)</span>
+						</div>
+						<p class="total_xian">已完成<span>0</span>条连线</p>
+						<div class="total_award">
+							<i class="origin1"></i>
+							<i class="origin2"></i>
+							<i class="origin3"></i>
+							<i class="origin4"></i>
+							<ol class="title_list bdr-b">
+								<li>探索点一</li>
+								<li>探索点二</li>
+								<li>探索点三</li>
+								<li>奖励</li>
+							</ol>
+							<!--当没有连线成功显示这句话-->
+							<p class="hint_xian">您尚未连线成功，请加油吧！</p>
+							<!--当有连成线 显示下面内容-->
+							<ul class="total_xian_list">
+
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!--活动规则-->
+			<div class="rule_box">
+				<p>1.活动时间：2017.09.11 - 2017.09.25</p>
+				<p>2.活动期间，各类红包会在每日24点限量发出若干数量，用户每次只可任意领取1张，用完之后可领取第二张，领取红包有效期5天;</p>
+				<p>3.活动期间用户使用的红包连成了任意一条直线，就可获得88元的现金红包。连成的直线越多，获得的现金越多，上不封顶！</p>
+				<p>4.用户每完成一条直线，领取红包界面就会重新刷新，用户可重复领取相同位置的红包;</p>
+				<p>5.活动期间每个位置的红包的面额、使用门槛都不会变，但每日发放的数量有限，先领先得;</p>
+				<p>6.现金红包在直线连成功时即时发放至账户，兑换有效期30日;</p>
+				<p>7.白拿标的，其他活动标不参与本活动;</p>
+				<p>8.本活动最终解释权归E都市钱包所有，平台有权在充分告知用户的情况下修改不合理规则。</p>
+
+			</div>
+
+			<!--页面底部-->
+			<footer class="footer_box">
+				<p> 本活动最终解释权归E都市钱包所有</p>
+				<p>欢迎致电客服：4001353388 | 微信公众号：E都市钱包</p>
+			</footer>
+
+			<!--页面引导部分-->
+			<div class="guide_page">
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<ul class="pagination_box">
+								<li></li>
+								<li></li>
+							</ul>
+						</div>
+						<div class="swiper-slide">
+							<div class="guide_btn" id="guide_btn"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--页面攻略按钮-->
+			<div class="strategy_btn"></div>
+
+			<!--页面攻略展示-->
+			<div class="strategy_page">
+				<div class="strategy_cont">
+					<p><span>1号星球：</span>10元红包单笔投资1月标满4800可用</p>
+					<p><span>2号星球：</span>30元红包单笔投资2月标满5800元可用</p>
+					<p><span>3号星球：</span>75元红包单笔投资3月标满10000元可用</p>
+					<p><span>4号星球：</span>128元红包单笔投资6月标满7800元可用</p>
+					<p><span>5号星球：</span>12元红包单笔投资1月标满5000元可用</p>
+					<p><span>6号星球：</span>38元红包单笔投资2月标满7800元可用</p>
+					<p><span>7号星球：</span>18元红包单笔投资1月标满8800元可用</p>
+					<p><span>8号星球：</span>15元红包单笔投资1月标满7200元可用</p>
+					<p><span>9号星球：</span>388元红包单笔投资6月标满25000元可用</p>
+				</div>
+				<div class="close_strategy"></div>
+			</div>
+
+			<!--领取红包弹框-->
+			<div class="red_package_tk">
+				<h1>恭喜您探索获得红包</h1>
+				<p></p>
+				<div class="package_btn">去使用 完成连线</div>
+				<div class="package_close"></div>
+			</div>
+
+			<!--页面遮罩-->
+			<section class="mask_tk"></section>
+
+			<!--活动结束的遮罩点击提示活动已经结束-->
+			<div class="mask_end"></div>
+		</div>
+
+		<input value="${uid!}" id="userIdHidden" type="hidden">
+	</body>
+
+</html>
+<script>
+	/*获取url后面的数据*/
+	function getQueryString(name) {
+		var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+		var r = window.location.search.substr(1).match(reg);
+		if(r != null) return unescape(r[2]);
+		return null;
+	}
+	/*调用原生底层*/
+	function PassValue(e) {
+		var u = navigator.userAgent;
+		var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1;
+		var isIos = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+		if(isAndroid) {
+			Android.getGoodsInfoFromJs(e);
+		} else if(isIos) {
+			passValue(e);
+		}
+	}
+
+	/*查看是不是APP传来的参数*/
+	var osType = getQueryString("osType");
+
+	/*给userId赋值*/
+	var userId = osType ? getQueryString("uid") : $("#userIdHidden").val();
+
+	/*去登录*/
+	function toLogin() {
+		if(osType) {
+			PassValue("LG");
+		} else {
+			window.location.href = "login.html";
+		}
+	}
+
+	//去投资
+	function toInvest() {
+		if(osType) {
+			PassValue("WIP");
+		} else {
+			window.location.href = "invest.html";
+		}
+	}
+
+	// 弹框内容（俩按钮）
+	function layer_btns(str, btn1, btn2, fn1, fn2) {
+		mobile_layer.open({
+			title: '温馨提示',
+			content: str,
+			shadeClose: false,
+			style: 'width:90%;',
+			btn: [btn1, btn2],
+			yes: fn1
+		})
+		$('.layermend').hide().siblings('h3').css({
+			padding: 0,
+			border: 0
+		})
+		$('.layermcont').css({
+			color: '#a2a2a2',
+			padding: '0 10px 20px'
+		})
+	}
+
+	/*将数字转换成钱数*/
+	function toMoney(num) {
+		num = num.toFixed(2);
+		num = parseFloat(num);
+		num = num.toLocaleString();
+		return num; //返回的是字符串23,245.12保留2位小数
+	}
+
+	/*点击查看攻略*/
+	$('.strategy_btn').click(function() {
+		$('.strategy_page').fadeIn();
+		$('.mask_tk').fadeIn();
+		$('body').css('overflow', 'hidden');
+	})
+	/*点击关闭攻略*/
+	$('.close_strategy,.mask_tk').click(function() {
+		$('.strategy_page').fadeOut();
+		$('.mask_tk').fadeOut();
+		$('.red_package_tk').fadeOut();
+		$('body').css('overflow', 'auto');
+		window.location.reload();
+	})
+	$(function() {
+		/*引导页轮播*/
+		var mySwiper = new Swiper('.swiper-container', {
+			direction: 'horizontal',
+		})
+	})
+	/*中奖记录滚动*/
+	var speed = 30;
+	var tab = document.getElementById('swiperTo');
+	var tab1 = document.getElementById('swiper_wrapper');
+	var tab2 = document.getElementById('swiper_wrapper1');
+	tab2.innerHTML = tab1.innerHTML;
+
+	function Marquee() {
+		if(tab2.offsetWidth - tab.scrollLeft <= 0) {
+			tab.scrollLeft -= tab1.offsetWidth;
+		} else {
+			tab.scrollLeft++;
+		}
+	}
+	setInterval(Marquee, speed);
+
+	/*判断是否登录*/
+	if(userId == '' || userId == 0 || userId == null || userId == undefined) {
+		userId = null;
+		$(".not_logIn").show();
+		$('.click_logIn').click(function() {
+			toLogin();
+		})
+		$('.draw_btn').click(function() { //未登录的时候点击领取红包跳转登录
+			layer_btns("快去登录,领取红包哦 ！", "去登录", "取消", toLogin)
+		});
+	} else {
+		//登录后的状态
+		$('.not_logIn').hide();
+		$('.already_logIn').show();
+		redPacket();
+		rewardDetails()
+	}
+
+	function getErr() {
+		$(".red_package_tk").show();
+		$(".mask_tk").show();
+		$(".red_package_tk h1").hide();
+		$(".red_package_tk p").css("marginTop", "0.8rem").html("您领取的红包尚未使用，<br/>请使用后领取！");
+		$(".red_package_tk .package_btn").css("marginTop", "0.75rem");
+		$('.red_package_tk .package_close').click(function() {
+			window.location.reload();
+		})
+	}
+
+	/*今日剩余红包展示*/
+	function residueRed() {
+		$.ajax({
+			url: '/activity/remainNineMaze.html',
+			type: 'get',
+			dataType: 'json',
+			cache: false,
+			success: function(data) {
+				//				console.log(data);
+				var d = data.list;
+
+				for(var i = 0; i < d.length; i++) {
+					$('.ligature_list li .list_content p span').eq(i).html(d[i].remain);
+				}
+
+			}
+		})
+	}
+	residueRed()
+
+	var arrRedBag = ["已使用10元", "已使用30元", "已使用75元", "已使用128元", "已使用12元", "已使用38元", "已使用18元", "已使用15元", "已使用388元"]
+	/*获取红包的状态*/
+	function redPacket() {
+		var iurl = "/activity/nineMaze.html?userId=" + userId;
+		//			console.log(iurl);
+		$.ajax({
+			url: iurl,
+			type: 'get',
+			dataType: 'json',
+			cache: false,
+			success: function(data) {
+				console.log(data);
+				var d = data.resData.allCoupons;
+				var awardCount = data.resData.awardCount;
+				var awardAmount = data.resData.awardAmount;
+				for(var i = 0; i < d.length; i++) {
+					$('.ligature_list li .list_content .draw_btn').eq(i).attr({
+						"id": d[i].id,
+						"amount": d[i].amount,
+						"name": d[i].name,
+						"redId": i
+					})
+
+					//############################
+					// isGet =1用户已经领取了    =0用户还未领取    
+					// isUse  =1 用户使用     =0用户未使用
+					//remain == 0 被抢完了
+					var myIndex = i+1;
+					if (d[i].isGet==1){
+					    if (d[i].isUse==1){
+					        // 显示已使用
+					        $('.ligature_list li').eq(i).addClass('bgActive')
+					        $('.ligature_list li .list_content .draw_btn').eq(i).addClass('drar_btn_active').html(arrRedBag[i]);
+					
+					        if($('#0-1').hasClass('bgActive') && $('#0-0').hasClass('bgActive')) { $('.xian1').addClass('xianActive'); }
+					        if($('#0-2').hasClass('bgActive') && $('#0-1').hasClass('bgActive')) { $('.xian2').addClass('xianActive'); }
+					        if($('#1-0').hasClass('bgActive') && $('#0-0').hasClass('bgActive')) { $('.xian7').addClass('xianActive'); }
+					
+					        if($('#1-1').hasClass('bgActive') && $('#0-0').hasClass('bgActive')) { $('.xian13').addClass('xianActive'); }
+					        if($('#1-1').hasClass('bgActive') && $('#0-1').hasClass('bgActive')) { $('.xian8').addClass('xianActive'); }
+					        if($('#1-1').hasClass('bgActive') && $('#0-2').hasClass('bgActive')) { $('.xian15').addClass('xianActive'); }
+					        if($('#1-1').hasClass('bgActive') && $('#1-0').hasClass('bgActive')) { $('.xian3').addClass('xianActive'); }
+					        if($('#1-2').hasClass('bgActive') && $('#0-2').hasClass('bgActive')) { $('.xian9').addClass('xianActive'); }
+					        if($('#1-2').hasClass('bgActive') && $('#1-1').hasClass('bgActive')) { $('.xian4').addClass('xianActive'); }
+					        if($('#2-0').hasClass('bgActive') && $('#1-0').hasClass('bgActive')) { $('.xian10').addClass('xianActive'); }
+					        if($('#2-0').hasClass('bgActive') && $('#1-1').hasClass('bgActive')) { $('.xian16').addClass('xianActive'); }
+					        if($('#2-1').hasClass('bgActive') && $('#2-0').hasClass('bgActive')) { $('.xian5').addClass('xianActive'); }
+					        if($('#2-1').hasClass('bgActive') && $('#1-1').hasClass('bgActive')) { $('.xian11').addClass('xianActive'); }
+					        if($('#2-2').hasClass('bgActive') && $('#2-1').hasClass('bgActive')) { $('.xian6').addClass('xianActive'); }
+					        if($('#2-2').hasClass('bgActive') && $('#1-1').hasClass('bgActive')) { $('.xian14').addClass('xianActive'); }
+					        if($('#2-2').hasClass('bgActive') && $('#1-2').hasClass('bgActive')) { $('.xian12').addClass('xianActive'); }
+					        
+					    } else{
+					        // 显示未使用
+					        $('.ligature_list li .list_content .draw_btn').eq(i).addClass('drar_btn_notActive').attr({
+					            onclick: 'getErr(' + d[i].id + ')'
+					        });
+					        $(".red_package_tk .package_btn").click(function() {
+					            toInvest();
+					        });
+					    }
+					} else {
+					    if (parseInt(d[i].remain)==0){
+					        // 显示被抢光 
+					        $('.ligature_list li .list_content .draw_btn').eq(i).addClass("drar_btn_active").removeAttr("onclick").html("被抢完了");
+					    } else {
+					        // 显示可以领取
+					        $('.ligature_list li .list_content .draw_btn').eq(i).attr({onclick: 'getShow(' + d[i].id + ',' + myIndex + ')'});
+					    }
+					}
+										
+					//##############################
+				}
+
+				//当活动结束时的状态
+				if(data.resData.isEnd == 1) {
+					$('.mask_end').show().click(function() {
+						$('.red_package_tk').show().css({
+							'z-index': '13',
+							'font-size': '.34rem',
+							'color': '#fff',
+							'paddingTop': '2.35rem',
+						})
+						$('.red_package_tk h1,.package_btn').hide();
+						$('.red_package_tk p').html('该活动已结束，请参与平台其他优惠活动！');
+						$('.package_close').click(function() {
+							$('.red_package_tk').hide();
+						})
+					});
+
+					$('.red_package_tk').show().css({
+						'z-index': '13',
+						'font-size': '.34rem',
+						'color': '#fff',
+						'paddingTop': '2.35rem',
+					})
+					$('.red_package_tk h1,.package_btn').hide();
+					$('.red_package_tk p').html('该活动已结束，请参与平台其他优惠活动！');
+					$('.package_close').click(function() {
+						$('.red_package_tk').hide();
+					})
+
+				}
+
+				//判断是否连成一条线展示弹框  
+				if(data.resData.isAward == 1) {
+					$('.red_package_tk').fadeIn();
+					$('.mask_tk').fadeIn();
+					$('body').css('overflow', 'hidden');
+					$('.red_package_tk h1').html('恭喜您完成' + '<span>' + awardCount + '</span>' + '条连线');
+					$('.red_package_tk p').css({
+						'marginTop': '0.5rem',
+						'fontSize': '0.6rem'
+					}).html(awardAmount + '元现金红包');
+					$('.red_package_tk .package_btn').css('marginTop', '0.7rem').html('继续探索');
+					$('.red_package_tk .package_btn').attr('id', 'packageBtn');
+					$('#packageBtn').click(function() {
+						$('.red_package_tk,.mask_tk').fadeOut();
+					})
+					$('.red_package_tk .package_close').click(function() {
+						window.location.reload();
+					})
+				}
+			}
+		});
+	}
+
+	var arrText1 = ["1", "2", "3", "6", "1", "2", "1", "1", "6"];
+	var arrText2 = ["4800", "5800", "10000", "7800", "5000", "7800", "8800", "7200", "25000"];
+	var arrText3 = ["10元", "30元", "75元", "128元", "12元", "38元", "18元", "15元", "388元"];
+
+	/*领取红包展示弹框事件*/
+	function getShow(ruleId, index) {
+		$(".red_package_tk").show();
+		$(".mask_tk").show();
+		if(userId == null) {
+			userId = '';
+		}
+		$.ajax({
+			url: '/activity/getRedEnvelopeNineMaze.html?userId=' + userId + '&ruleId=' + ruleId,
+			type: 'get',
+			dataType: 'json',
+			cache: false,
+			success: function(data) {
+				console.log(data)
+				if(data.resCode == 0) {
+					getErr()
+				} else if(data.resCode == 1) {
+					$(".red_package_tk p").html(arrText3[index - 1] + '<br/>' + '单笔投资' + arrText1[index - 1] + '月标' + '<br/>' + '满' + arrText2[index - 1] + '元');
+					$(".red_package_tk .package_btn").click(function() {
+						toInvest();
+					});
+					$('.red_package_tk .package_close').click(function() {
+						window.location.reload();
+					})
+				}
+			}
+		})
+	}
+
+	/*奖励详情统计*/
+	function rewardDetails() {
+		$.ajax({
+			url: '/activity/userNineMazeAward.html?userId=' + userId,
+			type: 'get',
+			dataType: 'json',
+			cache: false,
+			success: function(data) {
+				//				console.log(data.list)
+				var rl = data.list;
+				//      console.log(rl.amount)
+				if(data.totalAward == 0) { //根据获得总奖励判断下面的展示内容
+					$('.hint_xian').show();
+					$('.total_xian_list').hide();
+				} else {
+					$('.hint_xian').hide();
+					$('.total_xian_list').show();
+					for(var i = 0; i < rl.length; i++) {
+						var html = '<li class="bdr-b">' + '<span>' + rl[i].no1 + '</span>' + '<span>' + rl[i].no2 + '</span>' + '<span>' + rl[i].no3 + '</span>' + '<span>' + rl[i].amount + '元现金红包' + '</span>' + '</li>'
+						$('.total_xian_list').append(html);
+					}
+
+					$('.total_money').html(data.totalAward);
+					$('.total_xian span').html(data.totalCount);
+				}
+
+			}
+		})
+	}
+
+	/*判断用户第一次进来展示引导页*/
+	function localTheFirst() {
+		if(localStorage.pagecount) {
+			localStorage.pagecount = Number(localStorage.pagecount) + 1;
+		} else {
+			localStorage.pagecount = 1
+		}
+		if(localStorage.pagecount == 1) {
+			$('.guide_page').show();
+			$('.mask_tk').show();
+		}
+	}
+	localTheFirst()
+	$('#guide_btn').click(function() {
+		$('.guide_page').hide();
+		$('.mask_tk').hide();
+	})
+</script>
